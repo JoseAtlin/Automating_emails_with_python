@@ -7,7 +7,7 @@ EMAIL_ADDRESS = os.environ.get('EMAIL_ADD')
 EMAIL_PASSWORD = os.environ.get('EMAIL_PASS')
 
 contacts = ['abc@gmail.com', '123@gmail.com']
-files = ['dog1.jpg', 'dog2.jpg']
+files = ['image1.jpg', 'image2.jpg']
 
 msg = EmailMessage()
 msg['Subject'] = 'Sending email using Python'
