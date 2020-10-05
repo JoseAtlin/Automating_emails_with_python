@@ -2,7 +2,7 @@ from PIL import Image, ImageDraw, ImageFont
 import pandas as pd
 
 
-def create_certificate(name, college, year):
+def create_certificate(name, college, year, email_add):
     image = Image.open(ORIGINAL_CERTIFICATE)
     draw = ImageDraw.Draw(image)
     draw.text((X1, Y1), name, fill=FONT_COLOR, font=FONT)
@@ -22,12 +22,13 @@ FONT = ImageFont.truetype("arial.ttf", 60)
 FONT_COLOR = 'rgb(0, 0, 0)'
 
 
-data = pd.read_csv('MOCK_DATA.csv')
-names = data['first_name']
-college_name = data['company_name']
+data = pd.read_csv('input.csv')
+names = data['full_name']
+college_names = data['college_name']
 sem_year = data['year']
+email_id = data['email']
 
-for row in range(1):
-    name, college, year = names[row], college_name[row], sem_year[row]
-    print(name, college, year)
-    create_certificate(name, college, year)
+for row in range(len(names)):
+    name, college, year, email_add = names[row], college_names[row], sem_year[row], email_id[row]
+    print(name, college, year, email_add)
+    create_certificate(name, college, year, email_add)
