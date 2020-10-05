@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-data = pd.read_csv('MOCK_DATA.csv')
+data = pd.read_csv('input.csv')
 names = data['first_name']
 college_name = data['company_name']
 sem_year = data['year']
